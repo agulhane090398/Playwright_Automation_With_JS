@@ -1,0 +1,28 @@
+Installation:
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+npm init playwright@latest
+
+if above throws error then;
+
+npm init -y
+npm install -D @playwright/test
+npx playwright install
+mkdir tests
+
+
+-----------------------------------------
+
+Directory:
+package.json --- project manager
+playwright.config.js ---configuration file
+tests --- we can write tc here
+
+-----------------------------------------
+
+Run testcases:
+npx playwright test #runs all test on all browser(chromium/firfox/safari) in headless mode
+npx playwright test testcaseName.spec.js  #runs specific file on all browser in headless mode
+npx playwright test testcaseName.spec.js --project=chromium  #runs specisic file on specific browser in headless mode
+npx playwright test testcaseName.spec.js --project=chromium --headed #runs specisic file on specific browser in headed mode
+npx playwright test testcaseName.spec.js --project=chromium --headed --debug   #runs specisic file on specific browser in headed mode and can debug
+
